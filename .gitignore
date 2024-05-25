@@ -1,0 +1,7 @@
+config/nginx/access.log
+config/nginx/error.log
+config/nginx/fpm.error.log
+
+.php-cs-fixer.cache
+
+.idea

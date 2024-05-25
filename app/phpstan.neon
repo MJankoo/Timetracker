@@ -1,0 +1,8 @@
+parameters:
+    paths:
+        - src
+        - tests
+    level:
+        max
+    bootstrapFiles:
+        - vendor/autoload.php
