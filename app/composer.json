@@ -16,6 +16,8 @@
         "symfony/flex": "^2",
         "symfony/framework-bundle": "7.0.*",
         "symfony/runtime": "7.0.*",
+        "symfony/uid": "7.0.*",
+        "symfony/validator": "7.0.*",
         "symfony/yaml": "7.0.*"
     },
     "require-dev": {
@@ -28,6 +30,9 @@
         "symfony/phpunit-bridge": "^7.0"
     },
     "config": {
+        "platform": {
+            "php": "8.3"
+        },
         "allow-plugins": {
             "php-http/discovery": true,
             "symfony/flex": true,

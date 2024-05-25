@@ -1,0 +1,5 @@
+tracking:
+  resource:
+    path: ../src/Tracking/UserInterface/Controller/
+    namespace: MJankoo\TimeTracker\Tracking\UserInterface\Controller
+  type: attribute
