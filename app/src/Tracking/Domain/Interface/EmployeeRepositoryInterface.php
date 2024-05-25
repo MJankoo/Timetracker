@@ -10,5 +10,7 @@ interface EmployeeRepositoryInterface
 {
     public function save(Employee $employee): void;
 
+    public function employeeExists(string $employeeId): bool;
+
     public function getNextId(): string;
 }

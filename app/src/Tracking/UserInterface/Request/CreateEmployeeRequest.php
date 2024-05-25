@@ -7,7 +7,7 @@ namespace MJankoo\TimeTracker\Tracking\UserInterface\Request;
 use MJankoo\TimeTracker\Shared\UserInterface\AbstractRequest;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
-class CreateEmployeeRequest extends AbstractRequest
+final class CreateEmployeeRequest extends AbstractRequest
 {
     #[NotBlank]
     protected string $name;

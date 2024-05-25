@@ -18,6 +18,11 @@ class EmployeeRepositoryStub implements EmployeeRepositoryInterface
         $this->employees[$employee->getId()] = $employee;
     }
 
+    public function employeeExists(string $employeeId): bool
+    {
+        return isset($this->employees[$employeeId]);
+    }
+
     public function getEmployee(string $id): ?Employee
     {
         return $this->employees[$id] ?? null;

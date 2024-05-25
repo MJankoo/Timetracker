@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use MJankoo\TimeTracker\Tracking\Infrastructure\Doctrine\Orm\DoctrineOrmEmployeeRepository;
 
 #[ORM\Entity(repositoryClass: DoctrineOrmEmployeeRepository::class)]
-class Employee
+final class Employee
 {
     #[ORM\Id]
     #[ORM\Column]
