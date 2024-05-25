@@ -13,5 +13,11 @@ interface WorkTimeRepositoryInterface
 
     public function employeeHasTimeEntryForTheDay(string $employeeId, DateTimeImmutable $dateTime): bool;
 
+    /** @return array<WorkTime> */
+    public function getEntriesFromMonth(string $employeeId, DateTimeImmutable $dateTime): array;
+
+    /** @return array<WorkTime> */
+    public function getEntriesFromDay(string $employeeId, DateTimeImmutable $dateTime): array;
+
     public function getNextId(): string;
 }

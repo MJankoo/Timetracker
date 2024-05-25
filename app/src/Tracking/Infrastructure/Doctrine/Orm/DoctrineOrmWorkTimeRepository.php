@@ -38,4 +38,31 @@ class DoctrineOrmWorkTimeRepository extends ServiceEntityRepository implements W
         ]);
         return count($workTime) !== 0;
     }
+
+    /** @return array<WorkTime> */
+    public function getEntriesFromMonth(string $employeeId, DateTimeImmutable $dateTime): array
+    {
+        $startDate = $dateTime->modify('first day of this month');
+        $endDate =  $dateTime->modify('last day of this month');
+
+        /** @var array<WorkTime> $result */
+        $result = $this->createQueryBuilder('wt')
+            ->where('wt.startDate BETWEEN :start AND :end')
+            ->andWhere('wt.employeeId = :employeeId')
+            ->setParameter('start', $startDate->format('Y-m-d'))
+            ->setParameter('end', $endDate->format('Y-m-d'))
+            ->setParameter('employeeId', $employeeId)
+            ->getQuery()
+            ->getResult();
+        return $result;
+    }
+
+    /** @return array<WorkTime> */
+    public function getEntriesFromDay(string $employeeId, DateTimeImmutable $dateTime): array
+    {
+        return $this->findBy([
+            'startDate' => $dateTime,
+            'employeeId' => $employeeId
+        ]);
+    }
 }
