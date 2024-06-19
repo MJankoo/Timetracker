@@ -7,7 +7,7 @@ services:
       args:
         - USER_ID=${CURRENT_UID:-1000}
         - GROUP_ID=${CURRENT_GID:-1000}
-    container_name: innovation_software_php
+    container_name: time_tracker_php
     restart: 'no'
     user: "${CURRENT_UID}:${CURRENT_GID}"
     ports:
@@ -26,7 +26,7 @@ services:
 
   mysql:
     image: mariadb:10.11
-    container_name: innovation_software_mysql
+    container_name: time_tracker_mysql
     restart: 'no'
     command: '--sql_mode="" --default-authentication-plugin=mysql_native_password --max_allowed_packet=32505856'
     volumes:
@@ -39,7 +39,7 @@ services:
       - 3307:3306
 
   phpmyadmin:
-    container_name: innovation_software_phpmyadmin
+    container_name: time_tracker_phpmyadmin
     image: phpmyadmin/phpmyadmin
     restart: 'no'
     ports:
